@@ -33,6 +33,6 @@ npm install -g angular-cli
 
 ## Clone the project and run the app in development mode:
 
-git clone https://github.com/Subhankar-Saha/Youtube_Clone_Angular.git
-cd Youtube_Clone_Angular
-ng serve -o
+git clone https://github.com/Subhankar-Saha/Youtube_Clone_Angular.git  
+cd Youtube_Clone_Angular  
+ng serve -o  
