@@ -36,3 +36,8 @@ You don't have Angular CLI installed globally in your computer:
 `git clone https://github.com/Subhankar-Saha/Youtube_Clone_Angular.git`  
 `cd Youtube_Clone_Angular`  
 `ng serve -o`  
+
+## Dependendency  
+1. Angular  
+2. Flex Layout  
+3. Angular Material
