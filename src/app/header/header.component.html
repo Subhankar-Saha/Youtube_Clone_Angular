@@ -1,0 +1,99 @@
+<mat-toolbar #toolbar fxLayout="row" fxShow="true"  >
+    
+    <button mat-icon-button (click)="toolbar_toggle();"  >
+     <mat-icon>menu</mat-icon>
+   </button>
+   <mat-icon color='warn' style="font-size: 28px; margin-left: 8px;" >slideshow</mat-icon>
+   &nbsp;
+   <span fxFlex="18" >Youtube <sub>{{mc}}</sub></span> &nbsp;&nbsp;
+   <!-- <span>{{mc}} </span> -->
+   <!-- style="background-color: aqua;" -->
+ <div fxFlex = "45" fxLayoutAlign="start center" *ngIf = '!deviceXs' >
+   <input type="text"  matInput  #src  placeholder="Search"   >
+   <button mat-icon-button (click)="search();"  class="searchbox"   >
+    <mat-icon style="background-color:transparent;" >search</mat-icon>
+  </button>
+</div>
+
+   <span class="example-spacer"></span>
+   
+   <div fxFlex fxLayoutAlign="end center"   >
+    <button mat-icon-button (click)="search();"  class="searchbox" *ngIf = "deviceXs"  >
+      <mat-icon style="background-color:transparent;" >search</mat-icon>
+    </button>
+  
+    <a mat-buttton class="example-icon favorite-icon" >
+     <mat-icon >video_call</mat-icon>
+    </a>
+    <a mat-button class="example-icon favorite-icon" >
+        <mat-icon>apps</mat-icon>
+   </a>
+   <a mat-button class="example-icon notify-icon" >
+        <mat-icon matBadge="15" matBadgeColor="warn">notifications</mat-icon>
+   </a>
+   <a mat-icon-button class="example-icon person-icon">
+        <mat-icon>person</mat-icon>
+   </a>
+  </div>
+ </mat-toolbar>
+ 
+ <mat-sidenav-container  >
+    <mat-sidenav #sidenav *ngIf="!ismenuopen" id="sidenav" [mode]="deviceXs?'over':'side'" [class.menu-open] = "ismenuopen" [class.menu-close] = "!ismenuopen"    [opened]="deviceXs ?false:true" position="start" 
+    fxFlex.lg="25" 
+    fxLayout="column"  >
+      <mat-nav-list style="margin-top: 0%; " fxLayout="column"  fxLayoutGap="20px">
+        <a mat-list-item  ><div style="flex-direction: column; "><mat-icon  color="warn" style="background-color: transparent; " >home</mat-icon><span class="collapse" style="color: red;"> Home</span></div> </a>
+        <a mat-list-item > <div style="flex-direction: column;"><mat-icon style="background-color: transparent;">local_fire_department</mat-icon> <span class="collapse"> Trending</span></div> </a>
+        <a mat-list-item ><div style="flex-direction: column;"><mat-icon style="background-color: transparent;">subscriptions</mat-icon> <div class="collapse" > Subscriptions</div></div> </a>
+        <a mat-list-item ><div style="flex-direction: column;"> <mat-icon style="background-color: transparent;">video_library</mat-icon><span class="collapse"> Library</span></div> </a>
+        
+      </mat-nav-list>
+    </mat-sidenav>
+
+
+    <!-- [opened]="deviceXs ?false:true" -->
+    <mat-sidenav #sidenav *ngIf="ismenuopen" id="sidenav" [mode]="!deviceLg?'over':'side'" [class.menu-open] = "ismenuopen" [class.menu-close] = "!ismenuopen"    
+    opened 
+    
+    fxLayout="column" fxLayoutAlign="start center"  >
+      <mat-nav-list style="margin-top: 0%;">
+       
+        <a mat-list-item ><mat-icon  color="warn" style="background-color: transparent;">home</mat-icon> <span style="margin-left: 30px; font-weight: 500;">Home</span> </a>
+        <a mat-list-item > <mat-icon style="background-color: transparent;">local_fire_department</mat-icon> <span style="margin-left: 30px; font-weight: 500;">Trending</span> </a>
+        <a mat-list-item > <mat-icon style="background-color: transparent;">subscriptions</mat-icon> <span style="margin-left: 30px; font-weight: 500;">Subscriptions </span> </a>
+        <hr>
+        <a mat-list-item > <mat-icon style="background-color: transparent;">video_library</mat-icon> <span style="margin-left: 30px; font-weight: 500;" >Library</span> </a>
+        <a mat-list-item > <mat-icon style="background-color: transparent;">slideshow</mat-icon> <span style="margin-left: 30px; font-weight: 500;">Your videos</span> </a>
+        <a mat-list-item > <mat-icon style="background-color: transparent;">watch_later</mat-icon> <span style="margin-left: 30px; font-weight: 500;">Watch later</span> </a>
+        <!-- <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a> -->
+  
+      </mat-nav-list>
+    </mat-sidenav>
+
+
+    <mat-sidenav-content  [ngStyle] = "{'margin-left.%': content_margin}">
+      <div #vh2 id="vh2" class="vh2"  [class.l2] = "deviceXs" [class.l] = "!deviceXs">
+        <!-- <p>{{deviceXs}}</p> -->
+        <!-- <router-outlet></router-outlet> -->
+        <!-- <app-body [deviceXs] = "deviceXs"></app-body> -->
+
+        <div class="example-sidenav-content" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="10px"  fxLayoutAlign="space-evenly center">
+          <mat-card class="example-card" id="card_id" 
+          fxFlex.xs="100%" fxFlex.sm="40%" fxFlex.md="30%" fxFlex.lg="24%"   *ngFor="let i of [].constructor(20)">
+            <img mat-card-image src="https://images.unsplash.com/photo-1438786657495-640937046d18?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+              alt="Photo of a Shiba Inu">
+            <mat-card-content>
+              <p style="font-weight: 500; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                Mix - Luis Fonsi - Despacito ft. Daddy Yankee
+              </p>
+              <p>
+                2.5B views * 4 years ago
+              </p>
+            </mat-card-content>
+           
+          </mat-card>
+        </div>
+
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
