@@ -37,7 +37,7 @@ You don't have Angular CLI installed globally in your computer:
 `cd Youtube_Clone_Angular`  
 `ng serve -o`  
 
-## Dependendency  
+## Dependencies  
 1. Angular  
 2. Flex Layout  
 3. Angular Material
