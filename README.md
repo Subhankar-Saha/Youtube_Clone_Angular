@@ -26,8 +26,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
+##  Install or update Angular CLI:
+You don't have Angular CLI installed globally in your computer:\
+
+npm install -g angular-cli\
+
 ## Clone the project and run the app in development mode:
 
-git clone https://github.com/Subhankar-Saha/Youtube_Clone_Angular.git
-cd Youtube_Clone_Angular
-ng serve -o
+git clone https://github.com/Subhankar-Saha/Youtube_Clone_Angular.git\
+cd Youtube_Clone_Angular\
+ng serve -o\
